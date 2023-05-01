@@ -1,8 +1,11 @@
+import FavouriteCity from "./components/FavouriteCity";
+import SearchNewCity from "./components/SearchNewCity";
+
 function App() {
   return (
-    <div>
-      <h2>Weather App</h2>
-      <p>This is weather app.</p>
+    <div className="mx-auto max-w-screen-md mt-5 py-5 px-36 bg-gradient-to-br from-cyan-700 to-blue-700 shadow-xl shadow-gray-400 h-fit">
+      <FavouriteCity />
+      <SearchNewCity />
     </div>
   );
 }
