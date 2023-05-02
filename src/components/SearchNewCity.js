@@ -4,7 +4,7 @@ import { GoLocation } from "react-icons/go";
 const SearchNewCity = () => {
   const [searchCity, setSearchCity] = useState("");
   return (
-    <div className="flex justify-center flex-row my-5">
+    <div className="flex justify-center flex-row my-8">
       <div className="flex flex-row items-center justify-center w-3/4 space-x-4">
         <input
           className="px-2 py-[6px] text-sm w-full font-medium text-black rounded-sm shadow-md shadow-gray-700 focus:outline-none capitalize placeholder:lowercase"
