@@ -3,14 +3,16 @@ import sunimg from "../img/sunimg.png";
 import { FaTemperatureLow, FaWind, FaTemperatureHigh } from "react-icons/fa";
 import { BiDroplet } from "react-icons/bi";
 import { BsSunrise, BsSunset } from "react-icons/bs";
+import useApidata from "../utils/useApidata";
 
 const TempratureDetails = () => {
+  console.log(useApidata());
   return (
-    <div>
-      <div className="flex items-center justify-center my-8 text-xl text-cyan-300">
+    <div className="my-6">
+      <div className="flex items-center justify-center mt-3 text-xl text-cyan-300">
         Cloudy
       </div>
-      <div className="flex flex-row justify-between items-center text-white py-3">
+      <div className="flex flex-row justify-between items-center text-white py-2">
         <img src={sunimg} alt="sunImage" className="w-16" />
         <p className="text-5xl">34°</p>
         <div className="flex flex-col space-y-2">

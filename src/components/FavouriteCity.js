@@ -3,7 +3,7 @@ import { cities } from "../confiq";
 
 const FavouriteCity = () => {
   return (
-    <div className="flex items-center justify-around text-white font-semibold my-5">
+    <div className="flex items-center justify-around text-white font-semibold my-3">
       {cities.map((item) => {
         return (
           <button
