@@ -1,6 +1,7 @@
 import React from "react";
 
-const DateAndTime = () => {
+const DateAndTime = ({ data }) => {
+  // console.log(props.data.name);
   return (
     <div className="my-5">
       <div className="flex justify-center items-center my-3">
@@ -9,7 +10,9 @@ const DateAndTime = () => {
         </p>
       </div>
       <div className="flex justify-center items-center my-3">
-        <p className="text-white text-2xl font-medium">Mumbai, IN</p>
+        <p className="text-white text-2xl font-medium">
+          {data.name}, {data.sys?.country}
+        </p>
       </div>
     </div>
   );

@@ -1,8 +1,19 @@
 import React, { useState } from "react";
 import { BsSearch } from "react-icons/bs";
 import { GoLocation } from "react-icons/go";
-const SearchNewCity = () => {
+
+const SearchNewCity = ({ unit, setUnit, city, setCity }) => {
   const [searchCity, setSearchCity] = useState("");
+
+  function cityForecast() {
+    if (searchCity !== "" && city !== searchCity)
+      setCity(searchCity.toLowerCase());
+  }
+
+  function toggleForecastUnit(e) {
+    if (unit !== e.target.name) setUnit(e.target.name);
+  }
+
   return (
     <div className="flex justify-center flex-row my-5">
       <div className="flex flex-row items-center justify-center w-3/4 space-x-4">
@@ -17,6 +28,10 @@ const SearchNewCity = () => {
         <BsSearch
           size={20}
           className="text-white cursor-pointer transition ease-out duration-150 hover:scale-125"
+          onClick={() => {
+            cityForecast();
+            setSearchCity("");
+          }}
         />
         <GoLocation
           size={18}
@@ -24,11 +39,23 @@ const SearchNewCity = () => {
         />
       </div>
       <div className="flex flex-row items-center justify-center w-1/4">
-        <button name="metric" className="text-lg text-white font-normal">
+        <button
+          name="metric"
+          className="text-lg text-white font-normal"
+          onClick={(e) => {
+            toggleForecastUnit(e);
+          }}
+        >
           °C
         </button>
         <p className="text-lg text-white font-normal mx-[6px]">|</p>
-        <button name="imperial" className="text-lg text-white font-normal">
+        <button
+          name="imperial"
+          className="text-lg text-white font-normal"
+          onClick={(e) => {
+            toggleForecastUnit(e);
+          }}
+        >
           °F
         </button>
       </div>

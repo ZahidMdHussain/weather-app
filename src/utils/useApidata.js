@@ -1,18 +1,11 @@
-import { useEffect, useState } from "react";
-import { DEFAULT_WEATHER_DATA } from "../config";
+import { DEFAULT_WEATHER_DATA, API_KEY } from "../config";
 
-const useApidata = () => {
-  const [tempData, setTeampData] = useState(null);
-  useEffect(() => {
-    getWeatherData();
-  }, []);
+async function getWeatherData(city, unit) {
+  const data = await fetch(
+    `${DEFAULT_WEATHER_DATA}${city}&appid=${API_KEY}&units=${unit}`
+  );
+  const json = await data.json();
+  return json;
+}
 
-  async function getWeatherData() {
-    const data = await fetch(DEFAULT_WEATHER_DATA);
-    const json = await data.json();
-    setTeampData(json);
-  }
-  return tempData;
-};
-
-export default useApidata;
+export default getWeatherData;
