@@ -8,7 +8,7 @@ import getWeatherData from "./utils/useApidata";
 
 function App() {
   const [forecastData, setForecastData] = useState(null);
-  const [byCity, setByCity] = useState("gaya");
+  const [byCity, setByCity] = useState("delhi");
   const [forecastUnit, setForecastUnit] = useState("metric");
 
   useEffect(() => {

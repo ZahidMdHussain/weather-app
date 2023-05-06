@@ -3,6 +3,7 @@ import sunimg from "../img/sunimg.png";
 import { FaTemperatureLow, FaWind, FaTemperatureHigh } from "react-icons/fa";
 import { BiDroplet } from "react-icons/bi";
 import { BsSunrise, BsSunset } from "react-icons/bs";
+import { formatToLocalTime } from "../utils/dateFormatter";
 
 const TempratureDetails = ({ data }) => {
   return (
@@ -41,13 +42,19 @@ const TempratureDetails = ({ data }) => {
       <div className="flex flex-row items-center justify-center space-x-2 text-white text-sm py-3">
         <BsSunrise size={20} />
         <p className="font-light">
-          Rise: <span className="font-medium ml-1">{data.sys?.sunrise}</span>
+          Rise:{" "}
+          <span className="font-medium ml-1">
+            {formatToLocalTime(data.sys?.sunrise, "Asia/Kolkata", "hh:mm a")}
+          </span>
         </p>
         <p className="font-light">|</p>
 
         <BsSunset size={20} />
         <p className="font-light">
-          Set: <span className="font-medium ml-1">{data.sys?.sunset}</span>
+          Set:{" "}
+          <span className="font-medium ml-1">
+            {formatToLocalTime(data.sys?.sunset, "Asia/Kolkata", "hh:mm a")}
+          </span>
         </p>
         <p className="font-light">|</p>
 

@@ -36,6 +36,9 @@ const SearchNewCity = ({ unit, setUnit, city, setCity }) => {
         <GoLocation
           size={18}
           className="text-white cursor-pointer transition ease-out duration-150 hover:scale-125"
+          onClick={() => {
+            if (city !== "patna") setCity("patna");
+          }}
         />
       </div>
       <div className="flex flex-row items-center justify-center w-1/4">
