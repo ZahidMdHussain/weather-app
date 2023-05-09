@@ -6,7 +6,7 @@ const FavouriteCity = ({ city, setCity }) => {
     if (city !== e.target.value) setCity(e.target.value);
   }
   return (
-    <div className="flex items-center justify-around text-white font-semibold my-3">
+    <div className="flex items-center justify-around text-white font-semibold my-12">
       {cities.map((item) => {
         return (
           <button
